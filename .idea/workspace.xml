@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="221076ce-a6cd-4478-8347-81483e359a86" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/.htaccess" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/BaseController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/HomeController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/Router.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/index.php" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\test\.htaccess" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database.php" afterPath="$PROJECT_DIR$/database.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\OpenServer\domains\test\index.html" afterPath="$PROJECT_DIR$/app/views/layout/layout.html.tpl" />
     </list>
     <ignored path="Test.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -329,7 +319,11 @@
       <created>1412163911700</created>
       <updated>1412163911700</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="some changes&#10;">
+      <created>1412171129951</created>
+      <updated>1412171129951</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -372,7 +366,8 @@
       <TodoPanelSettings />
     </option>
     <MESSAGE value="move database settings" />
-    <option name="LAST_COMMIT_MESSAGE" value="move database settings" />
+    <MESSAGE value="some changes&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="some changes&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
