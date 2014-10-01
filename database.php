@@ -2,8 +2,8 @@
 
 $host = "localhost";
 $dbname = "test";
-$user = "user";
-$pass = "user";
+$user = "mysql";
+$pass = "mysql";
 
 
 try {

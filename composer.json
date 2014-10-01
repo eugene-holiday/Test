@@ -1,0 +1,10 @@
+{
+    "name": "eugeneholiday/tato",
+    "description": "Test",
+
+    "autoload": {
+        "classmap": [
+            "app/controllers"
+        ]
+    }
+}
