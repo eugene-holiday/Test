@@ -1,13 +1,14 @@
 <?php
 
 define('FRAMEWORK_START', microtime(true));
+
+ini_set("display_errors",1);
+error_reporting(E_ALL);
+
 require __DIR__.'/../vendor/autoload.php';
-require "Router.php";
 
-$router = new Router();
 
-$contr = new HomeController();
-echo $contr->actionIndex();
+$app = new Application();
+$app->run();
 
-print_r($router->getPathArray());
-echo FRAMEWORK_START;
+//echo FRAMEWORK_START;
