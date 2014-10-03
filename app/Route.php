@@ -37,13 +37,18 @@ class Route
 
     public function runControllerAction()
     {
-        $_controller = ucfirst($this->pathArray[1]).'Controller';
-        $_action = 'action' . ucfirst($this->pathArray[2]);
+        if ($this->pathArray[1]) {
+            $_controller = ucfirst($this->pathArray[1]) . 'Controller';
+            $controller = new $_controller;
 
-        echo $_controller."/".$_action;
-        $controller = new $_controller;
-        echo $controller->$_action();
+            if (isset($this->pathArray[2])){
+                $_action = 'action' . ucfirst($this->pathArray[2]);
 
+            }
+            else $_action = 'action' . ucfirst($controller->getDefaultAction());
+            return $controller->$_action();
+        }
+        else return "404 error";
 
     }
 

@@ -6,7 +6,7 @@
  * Time: 16:42
  */
 
-class BaseController {
+abstract class BaseController {
 
-    private $layout = "/layout";
-} 
+
+}

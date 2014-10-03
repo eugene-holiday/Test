@@ -6,6 +6,7 @@
         "classmap": [
             "app/Application.php",
             "app/Route.php",
+            "app/core",
             "app/controllers"
         ]
     }
