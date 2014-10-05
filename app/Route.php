@@ -8,48 +8,78 @@
  */
 class Route
 {
-    private $path;
 
-    private $pathArray;
+    private static $uri;
+
+    private static $routes;
 
     /**
      * @return array
      */
-    public function getPathArray()
+    public function getRoutes()
     {
-        return $this->pathArray;
+        return self::$uri;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getPath()
+    public static function add($route)
     {
-        return $this->path;
+        self::$routes[] = $route;
+
     }
 
-    function __construct()
+    private static function controllerFromPath($path)
     {
-        //echo "router __construct " . $_SERVER['REQUEST_URI'];
-        $this->path = $_SERVER['REQUEST_URI'];
-        $this->pathArray = explode('/', $this->path);
+        $arr = explode('@', $path);
+        return $arr;
     }
 
-    public function runControllerAction()
+
+    public static function run()
     {
-        if ($this->pathArray[1]) {
-            $_controller = ucfirst($this->pathArray[1]) . 'Controller';
+        self::$uri = explode('/', $_SERVER['REQUEST_URI']);
+        if (empty(self::$uri[1]))
+            self::$uri[1] = '/';
+
+        self::add(array('/' => 'home@index'));
+        self::add(array('contact' => 'home@contact'));
+        self::add(array('controller@action' => 'controller@action'));
+
+        foreach (self::$routes as $key => $route) {
+            $path = array_keys($route);
+            $stroute = self::controllerFromPath(array_values($route)[0]);
+            if($stroute[0] == 'controller'){
+                if($stroute[1] == 'action'){
+                    return self::callController(array_slice(self::$uri, 1));
+                }
+            }
+            if (self::$uri[1] == $path[0]) {
+                return self::callController($stroute);
+            }
+
+        }
+        return "404 error";
+
+    }
+
+    private static function callController($arr)
+    {
+        $_controller = self::getControllerName($arr[0]);
+
+        if (class_exists($_controller)) {
             $controller = new $_controller;
 
-            if (isset($this->pathArray[2])){
-                $_action = 'action' . ucfirst($this->pathArray[2]);
+            if (!empty($arr[1])) {
+                $_action = $arr[1];
 
-            }
-            else $_action = 'action' . ucfirst($controller->getDefaultAction());
+            } else $_action = 'action' . ucfirst($controller->getDefaultAction());
             return $controller->$_action();
         }
-        else return "404 error";
+        return false;
+    }
 
+    private static function getControllerName($name)
+    {
+        return ucfirst($name . 'Controller');
     }
 
 

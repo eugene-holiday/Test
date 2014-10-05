@@ -1,14 +1,13 @@
 <?php
 
-$host = "localhost";
-$dbname = "test";
-$user = "user";
-$pass = "user";
+return array(
 
+    'connect'=>'sqlite',
 
-try {
-    $db = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
-}
-catch(PDOException $e) {
-    echo $e->getMessage();
-}
+    'connections' => array(
+        'sqlite' => array(
+            'database' => __DIR__.'/../database/database.sqlite',
+            'prefix'   => '',
+        )
+    )
+);

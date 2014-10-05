@@ -8,9 +8,17 @@
 
 abstract class Controller {
 
-    private $layout = "/layout";
+    private $layout = "layout";
 
     private $action = "index";
+
+    /**
+     * @return string
+     */
+    public function getLayout()
+    {
+        return $this->layout;
+    }
 
     /**
      * @return string

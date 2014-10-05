@@ -6,7 +6,7 @@
  * Time: 16:42
  */
 
-abstract class BaseController {
+abstract class BaseController extends Controller{
 
 
 }

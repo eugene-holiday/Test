@@ -8,15 +8,23 @@
 
 class Application
 {
+    private $dbConfig;
+
     function __construct()
     {
-
+        $this->dbConfig = $this->readConfig();
     }
 
     public function run()
     {
-        $router = new Route();
-        $router->runControllerAction();
+        //print_r($this->dbConfig);
+        $db = new Database($this->dbConfig);
+        Route::run();
+    }
+
+    private function readConfig(){
+        $ret = include(__DIR__ . '/../config/database.php');
+        return $ret;
     }
 
 } 

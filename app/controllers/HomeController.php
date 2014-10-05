@@ -8,8 +8,13 @@
  */
 class HomeController extends BaseController
 {
-    public function actionIndex()
+    public function index()
     {
-        return "hello";
+        $data = 'HELLO WORLD';
+        View::render('home/index', array('data'=>$data));
+    }
+    public function contact()
+    {
+        View::render('home/contact');
     }
 } 
