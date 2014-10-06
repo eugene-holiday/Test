@@ -27,4 +27,8 @@ abstract class Controller {
     {
         return $this->action;
     }
+
+    private function loadModel($id){
+
+    }
 }

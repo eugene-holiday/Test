@@ -5,7 +5,8 @@
     "autoload": {
         "classmap": [
             "app/Application.php",
-            "app/Route.php",
+            "app/Router.php",
+            "app/Request.php",
             "app/core",
             "app/controllers"
         ]
