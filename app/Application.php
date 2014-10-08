@@ -19,6 +19,9 @@ class Application
     {
         //print_r($this->dbConfig);
         $db = new Database($this->dbConfig);
+        $sql = 'select * from post';
+        foreach($db->query($sql) as $row)
+            print_r ($row);
         $router = new Router();
 //        $router->add(array('/' => 'home@index'));
 //        $router->add(array('contact' => 'home@contact'));

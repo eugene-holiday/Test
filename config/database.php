@@ -6,7 +6,15 @@ return array(
 
     'connections' => array(
         'sqlite' => array(
-            'database' => __DIR__.'/../database/database.sqlite',
+            'database' => '../app/database/database.sqlite',
+            'prefix'   => '',
+        ),
+
+        'mysql' => array(
+            'host' => 'localhost',
+            'user' => 'mysql',
+            'password' => 'mysql',
+            'dbname' => 'framework',
             'prefix'   => '',
         )
     )

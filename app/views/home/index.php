@@ -12,4 +12,5 @@ echo "HomeController/Index";
 
 <div class="row">
     <h2><?php echo $data ?></h2>
+    <p><?php echo $words; ?></p>
 </div>
